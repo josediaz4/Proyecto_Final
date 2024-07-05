@@ -1,0 +1,47 @@
+﻿@model Proyecto_Final.Data.Entidades.Service
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Imagen")
+        </dt>
+        <dd class="col-sm-10">
+            <img src="https://proyectopelu.blob.core.windows.net/servicios/@item.UrlImage" style="width:50px;height:50px;max-width: 100%; height: auto;" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+</div>

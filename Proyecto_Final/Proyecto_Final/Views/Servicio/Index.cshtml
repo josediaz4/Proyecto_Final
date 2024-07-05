@@ -1,0 +1,86 @@
+﻿@using Proyecto_Final.Data.Entidades
+
+@model IEnumerable<Service>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear Nuevo</a>
+</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Servicios</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-responsive table-striped" id="MyTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Precio)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Duracion)
+                            </th>
+                            <th>
+                                @Html.DisplayName("Imagen")
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Precio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Duracion) hs
+                                </td>
+                                <td width="33%">
+                                    <img src="https://proyectopelu.blob.core.windows.net/servicios/@item.UrlImage" style="width:50px;height:50px;max-width: 100%; height: auto;" />
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">Editar</a>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Detalles</a>
+                                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-1" onclick="return confirm('¿Está seguro que desea archivar este producto?');">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                },
+                "aLengthMenu": [
+                    [10, 50, 100, -1],
+                    [10, 50, 100, "Todos"]
+                ]
+            });
+        });
+    </script>
+}

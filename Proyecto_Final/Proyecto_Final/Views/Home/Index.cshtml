@@ -1,0 +1,29 @@
+﻿@using Proyecto_Final.Data.Entidades
+
+@model IEnumerable<Service>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <div class="col-12 col-md-12 col-lg-4">
+            <div class="card text-light text-center bg-dark pb-2">
+                <div class="card-body text-white">
+                    <div class="img-area mb-4">
+                        <img src="https://proyectopelu.blob.core.windows.net/servicios/@item.UrlImage" style="width:50px;height:50px;max-width: 100%; height: auto;" />
+                    </div>
+                    <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                    <p class="lead">
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </p>
+                    <button href="#" class="btn bg-primary text-white">Mas informacion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
