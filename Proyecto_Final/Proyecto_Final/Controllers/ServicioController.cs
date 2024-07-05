@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Final.Data;
 using Proyecto_Final.Data.Entidades;
@@ -6,15 +7,16 @@ using Proyecto_Final.Helpers;
 
 namespace Proyecto_Final.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServicioController : Controller
     {
         private readonly DataContext _context;
-        private readonly IHelpersBlob _helpersBlob;
+        private readonly IBlobHelper _blobHelper;
 
-        public ServicioController(DataContext context, IHelpersBlob helpersBlob)
+        public ServicioController(DataContext context, IBlobHelper blobHelper)
         {
             _context = context;
-            _helpersBlob = helpersBlob;
+            _blobHelper = blobHelper;
         }
         public async Task<IActionResult> Index()
         {
@@ -40,14 +42,16 @@ namespace Proyecto_Final.Controllers
             //Validar el metodo
             if (ModelState.IsValid)
             {
+                Guid imageId = Guid.Empty;
                 try
                 {
                     //Verificar si se ha agregado una imagen
                     if (model.ImageFile!=null)
                     {
                         //Guardamos la imagen en el contendedor de Blob Storage
-                        await _helpersBlob.UploadBlobAsync(model.ImageFile, "servicios");
-                        model.UrlImage = model.ImageFile.FileName;
+                        imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "servicios");
+
+                        model.ImageId = imageId;
                         model.Estado = true;
                     }
                     //Guardar la información del servicio en la base de datos
@@ -76,28 +80,36 @@ namespace Proyecto_Final.Controllers
             return View(model);
         }
 
-        public IActionResult Delete(int id)
+        //Eliminar Categoria
+        public async Task<IActionResult> Delete(int? id)
         {
-            //Recuperamos la información del servicio
-            var service = _context.Servicios.FirstOrDefault(s => s.Id == id);
-
-            //Verificamos si existe el servicio en la base de datos
-            if (service is null)
+            if (id == null)
             {
                 return NotFound();
             }
-            try
+
+            var category = await _context.Servicios
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (category == null)
             {
-                //Eliminamos la imagen de Azure Blob Storage
-                _helpersBlob.DeleteBlob(service.UrlImage, "servicios");
-                //Eliminar el servicio de la base de datos
-                _context.Servicios.Remove(service);
-                _context.SaveChanges();
+                return NotFound();
             }
-            catch (Exception ex)
+
+            return View(category);
+        }
+
+        // POST: Countries/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var category = await _context.Servicios.FindAsync(id);
+            if (category != null)
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                _context.Servicios.Remove(category);
             }
+
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

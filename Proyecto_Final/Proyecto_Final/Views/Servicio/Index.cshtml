@@ -1,6 +1,5 @@
-﻿@using Proyecto_Final.Data.Entidades
-
-@model IEnumerable<Service>
+﻿
+@model IEnumerable<Proyecto_Final.Data.Entidades.Service>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
 
@@ -28,7 +27,7 @@
                                 @Html.DisplayNameFor(model => model.Duracion)
                             </th>
                             <th>
-                                @Html.DisplayName("Imagen")
+                                @Html.DisplayNameFor(model => model.ImageFullPath)
                             </th>
 
                             <th></th>
@@ -48,7 +47,7 @@
                                     @Html.DisplayFor(modelItem => item.Duracion) hs
                                 </td>
                                 <td width="33%">
-                                    <img src="https://proyectopelu.blob.core.windows.net/servicios/@item.UrlImage" style="width:50px;height:50px;max-width: 100%; height: auto;" />
+                                    <img src="@item.ImageFullPath" style="width:100px; height:100px; border-radius:50px" />
                                 </td>
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">Editar</a>

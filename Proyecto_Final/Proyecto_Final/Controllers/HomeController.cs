@@ -11,10 +11,10 @@ namespace Proyecto_Final.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IHelpersBlob _helpersBlob;
+        private readonly IBlobHelper _helpersBlob;
         private readonly DataContext _context;
 
-        public HomeController(ILogger<HomeController> logger, DataContext context, IHelpersBlob helpersBlob)
+        public HomeController(ILogger<HomeController> logger, DataContext context, IBlobHelper helpersBlob)
         {
             _logger = logger;
             _helpersBlob = helpersBlob;
@@ -42,5 +42,11 @@ namespace Proyecto_Final.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+
+		[Route("error/404")]
+		public IActionResult Error404()
+		{
+			return View();
+		}
+	}
 }

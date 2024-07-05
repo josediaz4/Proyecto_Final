@@ -26,10 +26,13 @@ namespace Proyecto_Final.Data.Entidades
 
         public float Duracion { get; set; }
 
-        public string? UrlImage { get; set; }
+        public Guid ImageId { get; set; }
 
+        [Display(Name = "Foto")]
+        public string ImageFullPath => ImageId == Guid.Empty
+            ? $"https://localhost:7077/images/no-image.png"
+            : $"https://proyectopelu.blob.core.windows.net/servicios/{ImageId}";
         [NotMapped]
-        [Display(Name = "Imagen")]
         public IFormFile ImageFile { get; set; }
 
     }
