@@ -1,4 +1,5 @@
 ﻿@using Proyecto_Final.Data.Entidades
+<link rel="stylesheet" href="~/css/estilos.css" />
 
 @model IEnumerable<Service>
 
@@ -6,24 +7,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-@foreach (var item in Model)
-{
-    <div>
-        <div class="col-12 col-md-12 col-lg-4">
-            <div class="card text-light text-center bg-dark pb-2">
-                <div class="card-body text-white">
-                    <div class="img-area mb-4">
-                        <img src="@item.ImageFullPath" style="width:100px; height:100px; border-radius:50px" />
-                    </div>
-                    <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
-                    <p class="lead">
-                        @Html.DisplayFor(modelItem => item.Descripcion)
-                    </p>
-                    <button href="#" class="btn bg-primary text-white">Mas informacion</button>
-                </div>
-            </div>
-        </div>
-    </div>
-        
-}
+<partial name="_carrusel" />
 
+<partial name="_about" />
+
+<partial name="_services" />
+
+<partial name="_contact" />
+
+<script src="~/js/enviarMail.js"></script>
