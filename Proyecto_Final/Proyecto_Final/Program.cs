@@ -12,6 +12,9 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<DataContext>(
     options =>
     {
+        //Cadena Conexion Notebook
+        //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        //Cadena conexion PC Escritorio
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
 
