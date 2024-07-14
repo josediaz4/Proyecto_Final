@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link href="~/css/estilos_footer.css" rel="stylesheet" />
+</head>
+<body>
+
+    <section id="map">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="text-dark text-center">
+                    <h3>Donde encontrarnos</h3>
+                    <div class="map-icon">
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://maps.app.goo.gl/XLazVLvKduutMFhk8" style="text-decoration:none;" target="_blank"><h5 class="text-dark">"Frias Silva 920 - Monteros"</h5></a>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/3815556397/?text=Hola%20queria%20mas%20info" target="_blank"><h5 class="text-dark">(03863) - 15413555</h5></a>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:diaz.jose.manuel.04@gmail.com?Subject=Consulta%20por%20turno" target="_blank"><h5 class="text-dark">mirta_lopez73@gmail.com</h5></a>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.instagram.com/peluqueria_mirtalopez?igsh=ZGg2cGl0dzI1OTBo" target="_blank"><h5 class="text-dark">peluqueria_mirtalopez</h5></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 ps-lg-5 md-5">
+                <div id="mi_mapa" class="border-primary" style="width:100%; height:500px; border-radius:10px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let map = L.map('mi_mapa').setView([-27.1726608, -65.5118681], 16)
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([-27.1726608, -65.5118681]).addTo(map).bindPopup("Peluqueria Mirta López")
+
+        map.on('click', onMapClick)
+
+        function onMapClick(e) {
+            alert("Posición: " + e.latlng)
+        }
+    </script>
+</body>
+</html>

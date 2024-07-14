@@ -38,11 +38,11 @@ namespace Proyecto_Final.Models
         //TODO: Pending to put the correct paths
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:7077/images/no-image.png"
+            ? $"https://localhost:5024/images/no-image.png"
             : $"https://proyectosdiaz.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Image")]
-        public IFormFile ImageFile { get; set; }
+        public IFormFile? ImageFile { get; set; }
 
     }
 }

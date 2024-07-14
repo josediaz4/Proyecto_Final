@@ -1,22 +1,130 @@
 ﻿@using Proyecto_Final.Data.Entidades
+@using Proyecto_Final.Models
+
 <link rel="stylesheet" href="~/css/estilos.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-
 @model IEnumerable<Service>
 
 @{
     ViewData["Title"] = "Home Page";
 }
+<!--Seccion Peluqueria-->
+<section id="pelu" class="pelu">
+    <div class="section-padding container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 logo-pelu">
+                <img src="~/images/logo.png" class="img-fluid" style="width:400px; height:400px;">
+            </div>
+        </div>
+    </div>
+</section>
 
+<!--Seccion Carrusel-->
 <partial name="_carrusel" />
+<!--Seccion about-->
+<section id="about" class="about section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="about-img">
+                    <img src="~/images/peluquera.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 ps-lg-5 md-5">
+                <div class="about-text text-dark text-center">
+                    <h2>Quienes somos </h2><br />
+                    <p class="text-dark" style="font-size:20px">
+                        ML Peluquería nació en el año 2014 con el propósito de ayudar a mejorar la autopercepción de las personas a partir de la salud y la estética capilar.<br />
 
+                        Nuestra misión es obtener la imagen deseada por nuestros clientes, fortaleciendo su autoestima y logrando autoafirmación. Nos caracterizamos por hacer la diferencia.
+                        La empatía de nuestros profesionales selectos permite alcanzar la mejor expresión de nuestros usuarios. Somos la peluquería más autentica y distintiva de nuestra ciudad y  brindamos un excelente servicio con un ambiente climatizado.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<partial name="_about" />
+<!--Seccion Servicios-->
+<section id="portfolio" class="portfolio section-padding">
 
-<partial name="_services" />
+    <div class="container">
 
+        <div class="row">
+            <div class="col-12">
+                <div class="section-head text-dark pb-5 text-center">
+                    <h2>Nuestros Servicios</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-md-12 col-lg-4 mb-3">
+                    <div class="card border-primary pb-2 text-center">
+                        <div class="card-body">
+                            <div class="img-area mb-4">
+                                <img src="@item.ImageFullPath" style="width:300px; height:300px; border-radius:10px" />
+                            </div>
+                            <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                            <p class="lead">
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </p>
+                            <a asp-controller="Servicio" asp-action="DetailService" asp-route-id="@item.Id" class="btn btn-outline-primary">Mas informacion</a>
+                        </div>
+                    </div>
+                </div>
+            }
 
-<partial name="_contact" />
+        </div>
+    </div>
+</section>
 
+<!--Seccion Contacto-->
+<section id="contact" class="contact section-padding">
+
+    <div class="mt-3 mb-5 container_contact">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-header text-dark pb-3 text-center">
+                    <h2>Contacto</h2>
+                    <p style="font-size:20px;">
+                        Contanos que te parecieron nuestros servicios..
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="justify-content:center;">
+            <div class="col-lg-8 col-md-12 p-0 pt-4 pb-4 justify-content-between text-center">
+                <form action="https://formsubmit.co/diaz.jose.manuel.04@gmail.com" method="POST" class="bg-secondary p-4 justify-content-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="Nombre" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Correo">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="3" name="mensaje" placeholder="Mensaje"></textarea>
+                            </div>
+                        </div>
+                        <input class="btn btn-primary btn-lg btn-block mt-3" type="submit" value="Enviar">
+
+                        <input type="hidden" name="_next" value="https://localhost:7091/" />
+                        <input type="hidden" name="_captcha" value="false" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Seccion Geolocalizacion-->
 <partial name="_map" />

@@ -1,0 +1,38 @@
+﻿@model Proyecto_Final.Data.Entidades.Service
+
+<link href="~/css/estilos.css" rel="stylesheet" />
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalle</h1>
+
+<div class="card mt-5" style="width: 550px;">
+    <img src="@Html.DisplayFor(model => model.ImageFullPath)" style="" class="card-img-top img-detalle" alt="...">
+    <div class="card-body">
+        <h5 class="titulo-reserva" style="font-size:20px; font-weight:bold;">@Html.DisplayFor(model => model.Nombre)</h5>
+        <p>@Html.DisplayFor(model => model.Descripcion) </p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="font-size:15px;">
+            <div class="items-reserva">
+                @Html.DisplayNameFor(model => model.Precio):
+                @Html.DisplayFor(model => model.Precio)
+            </div>            
+        </li>
+        <li class="list-group-item" style="font-size:15px;">
+            <div class="items-reserva">
+                @Html.DisplayNameFor(model => model.Duracion):
+                @Html.DisplayFor(model => model.Duracion)
+            </div>
+            
+        </li>
+        <li class="list-group-item text-danger" style="font-size:15px; font-weight:bold">¡Turnos Disponibles!</li>
+    </ul>
+    <div class="card-body">
+        <a href="https://wa.me/3815556397/?text=Hola%20queria%20solicitar%20turno%20" target="_blank" class="btn btn-lg btn-primary">Reservar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-success">Volver</a>
+    </div>
+</div>
+

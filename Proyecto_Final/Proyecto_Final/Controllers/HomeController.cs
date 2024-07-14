@@ -12,12 +12,14 @@ namespace Proyecto_Final.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IBlobHelper _helpersBlob;
+        private readonly IUserHelper _userHelper;
         private readonly DataContext _context;
 
-        public HomeController(ILogger<HomeController> logger, DataContext context, IBlobHelper helpersBlob)
+        public HomeController(ILogger<HomeController> logger, DataContext context, IBlobHelper helpersBlob, IUserHelper userHelper)
         {
             _logger = logger;
             _helpersBlob = helpersBlob;
+            _userHelper = userHelper;
             _context = context;
         }
 
@@ -48,5 +50,7 @@ namespace Proyecto_Final.Controllers
 		{
 			return View();
 		}
-	}
+  
+
+    }
 }

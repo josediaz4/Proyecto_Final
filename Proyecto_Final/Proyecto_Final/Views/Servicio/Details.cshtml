@@ -37,7 +37,7 @@
             @Html.DisplayName("Imagen")
         </dt>
         <dd class="col-sm-10">
-            @* <img src="https://proyectopelu.blob.core.windows.net/servicios/@item.UrlImage" style="width:50px;height:50px;max-width: 100%; height: auto;" /> *@
+            <img src="@Html.DisplayFor(model => model.ImageFullPath)" style="width:500px;height:500px;" />
         </dd>
     </dl>
 </div>
@@ -45,3 +45,6 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> |
     <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
 </div>
+
+
+    

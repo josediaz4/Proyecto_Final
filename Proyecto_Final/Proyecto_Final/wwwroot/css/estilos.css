@@ -1,29 +1,50 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    font-family: "Nunito", sans-serif;
 }
 #maps {
     height: 500px;
     width: 100%;
 }
 body{
+    background: #fee;
     
-    background: #161815;
 }
-.container{
-    margin-top: 110px; /*para separar el navbar cuando tiene la propiedad fixed*/
+.container {
+    margin-top: 30px; /*para separar el navbar cuando tiene la propiedad fixed*/
+    
+   
 }
 .container-fluid{
-    padding: 1px 10px;
-
+    padding: 1px 10px;    
+    
+}
+.container_contact {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.section-padding{
-    padding: 70px 0; 
+.pelu-logo {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-padding {
+    padding: 70px 0 40px 0;
+}
+
+span{
+    font-family: "Nunito", sans-serif;
 }
 
 /*Seccion carousel*/
 .carousel-item{
-    height: 80vh;
+    height: 60vh;
     min-height: 300px;
 }
 .carousel-caption{
@@ -53,26 +74,34 @@ body{
     z-index: 1;
 }
 /*Seccion Navbar*/
-.navbar{    /**/
+.navbar{    
     margin: 0;
     padding: 0;
 }
-
-.navbar-nav a{
-    font-size: 15px;
+nav{
+    padding: 0;
+    margin: 0;
+}
+.navbar-nav a {
+    font-size: 20px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    margin: 0; /**/
+    padding: 0; /**/
 }
 .navbar-brand{
-    padding: 0px; /**/
+    padding: 5px; /**/
+    margin: 0px;
 }
 
-.navbar-dark .nabvar-brand{
+.navbar-dark .nabvar-brand {
     color: #fff;
     font-size: 25px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+    margin: 0; /**/
+    padding: 0; /**/
 }
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
     color: #000;
@@ -81,7 +110,7 @@ body{
     height: 100vh;
 }
 .navbar-toggler{
-    padding: 1px 5px;
+    padding: 5px 5px;
     font-size: 18px;
     line-height: 0.3;
 }
@@ -90,7 +119,7 @@ body{
     height: 100px;
 }
 .nav-item{
-    padding: 0 10px;
+    padding: 30px 10px;
 }
 /*Seccion services y team*/
 .services .card-body i{
@@ -99,6 +128,23 @@ body{
 .team .card-body i{
     font-size: 20px;
 }
+/*Detalles Servicios*/
+.img-detalle {
+    /*width: 500px;
+    height: 500px; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card .card-body h5 .titulo-reserva {
+    font-size:20px;
+    font-weight: bold;
+}
+.items.reserva{
+    font-size: 15px;
+    font-weight: bold;
+}
+
 
 
 /*Seccion convertir en RESPONSIVE*/
@@ -139,3 +185,163 @@ body{
     }
 }
 
+
+/*estilos modal*/
+/* Absolute Center Spinner */
+.loading {
+    position: fixed;
+    display: none;
+    z-index: 1031;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+    /* Transparent Overlay */
+    .loading:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    /* :not(:required) hides these rules from IE9 and below */
+    .loading:not(:required) {
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0;
+    }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 1500ms infinite linear;
+            -moz-animation: spinner 1500ms infinite linear;
+            -ms-animation: spinner 1500ms infinite linear;
+            -o-animation: spinner 1500ms infinite linear;
+            animation: spinner 1500ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+        }
+
+/* Animation */
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.text-danger span::before {
+    content: "";
+    display: block;
+    background: url('/images/error.png');
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}

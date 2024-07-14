@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Proyecto_Final.Data;
 using Proyecto_Final.Data.Entidades;
 using Proyecto_Final.Helpers;
+using Vereyon.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,6 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddDbContext<DataContext>(
     options =>
     {
-        //Cadena Conexion Notebook
-        //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-        //Cadena conexion PC Escritorio
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
 
@@ -29,7 +27,7 @@ builder.Services.AddIdentity<User, IdentityRole>(cfg =>
     cfg.Password.RequireUppercase = false;
 }).AddEntityFrameworkStores<DataContext>();
 
-//Si hay alguna anomalia en las direcciones de la pagina no redirecciona a la accion NotAuthorize del AccountController
+//Si hay alguna anomalia en las direcciones de la pagina nos redirecciona a la accion NotAuthorize del AccountController
 builder.Services.ConfigureApplicationCookie(options =>
 {
 	options.LoginPath = "/Account/NotAuthorized";
@@ -38,6 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 //Inyectamos la clase Helper
 builder.Services.AddTransient<SeedDb>();
+builder.Services.AddFlashMessage();
 builder.Services.AddScoped<IBlobHelper, BlobHelper>();
 builder.Services.AddScoped<IUserHelper, UserHelper>();
 

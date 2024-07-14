@@ -31,7 +31,7 @@ namespace Proyecto_Final.Data.Entidades
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:7077/images/no-image.png"
+            ? $"https://localhost:5024/images/no-image.png"
             : $"https://proyectosdiaz.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]

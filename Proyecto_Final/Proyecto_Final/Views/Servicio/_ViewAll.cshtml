@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Proyecto_Final.Data.Entidades.Service>
+
+<table class="table-striped table-responsive-md table-bordered smfont table" id="ServiciosTable">
+    <colgroup>
+        <col span="1" />
+        <col span="1" />
+        <col span="1" />
+        <col span="1" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageFullPath)
+            </th>
+
+            <th>
+                <a onclick="showInPopup('@Url.Action("Create", "Servicio", new {}, Context.Request.Scheme)'
+                , 'Nuevo Servicio')" class="btn btn-sm btn-primary text-white"><i class="fa fa-plus-circle"></i> Servicio</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-controller="Servicio" asp-route-Id="@item.Id">@Html.DisplayFor(modelItem => item.Nombre)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duracion) hs
+                </td>
+                <td width="33%">
+                    <img src="@item.ImageFullPath" style="width:100px; height:100px; border-radius:50px" />
+                </td>
+                <td>
+                    <a onclick="showInPopup('@Url.Action("Edit", "Servicio", new { id=item.Id }, Context.Request.Scheme)'
+                        , 'Actualizar Servicio')" class="btn btn-sm btn-warning"><i class="fa fa-pencil-alt"></i> </a>
+                    <button data-id="@item.Id" class="btn btn-sm btn-danger deleteItem" data-bs-toggle="modal" data-bs-target="#deleteDialog"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
