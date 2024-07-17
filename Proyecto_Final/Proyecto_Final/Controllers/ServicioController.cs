@@ -151,8 +151,18 @@ namespace Proyecto_Final.Controllers
 
             if (ModelState.IsValid)
             {
+                Guid imageId = service.ImageId;
                 try
                 {
+                    //Verificar si se ha agregado una imagen
+                    if (service.ImageFile != null)
+                    {
+                        //Guardamos la imagen en el contendedor de Blob Storage
+                        imageId = await _blobHelper.UploadBlobAsync(service.ImageFile, "servicios");
+
+                        service.ImageId = imageId;
+                        service.Estado = true;
+                    }
                     _context.Update(service);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -178,22 +188,6 @@ namespace Proyecto_Final.Controllers
 
         //Detalles de Servicio
         public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var service = await _context.Servicios
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (service == null)
-            {
-                return NotFound();
-            }
-
-            return View(service);
-        }
-        public async Task<IActionResult> DetailService(int? id)
         {
             if (id == null)
             {

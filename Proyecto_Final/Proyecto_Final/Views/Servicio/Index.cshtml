@@ -3,7 +3,9 @@
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
 
-
+@{
+    ViewData["Title"] = "Ml Peluqueria";
+}
 <br />
 <br />
 <p class="mt-5">
@@ -23,13 +25,13 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.Nombre)
                             </th>
-                            <th>
+                            <th id="ocultar">
                                 @Html.DisplayNameFor(model => model.Precio)
                             </th>
-                            <th>
+                            <th id="ocultar">
                                 @Html.DisplayNameFor(model => model.Duracion)
                             </th>
-                            <th>
+                            <th id="ocultar">
                                 @Html.DisplayNameFor(model => model.ImageFullPath)
                             </th>
 
@@ -43,19 +45,19 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Nombre)
                                 </td>
-                                <td>
+                                <td id="ocultar">
                                     @Html.DisplayFor(modelItem => item.Precio)
                                 </td>
-                                <td>
+                                <td id="ocultar">
                                     @Html.DisplayFor(modelItem => item.Duracion) hs
                                 </td>
-                                <td width="33%">
+                                <td id="ocultar">
                                     <img src="@item.ImageFullPath" style="width:100px; height:100px; border-radius:50px" />
                                 </td>
                                 <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning">Editar</a>
-                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info">Detalles</a>
-                                    <a asp-controller="Servicio" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-1" onclick="return confirm('¿Está seguro que desea archivar este producto?');">Eliminar</a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></a>
+                                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info fa-xl" style="color: #74C0FC;"></i></a>
+                                    <a asp-controller="Servicio" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('¿Está seguro que desea archivar este producto?');"><i class="fa-solid fa-trash fa-xl" style="color: #cb4f3a;"></i></a>
                                 </td>
                             </tr>
                         }

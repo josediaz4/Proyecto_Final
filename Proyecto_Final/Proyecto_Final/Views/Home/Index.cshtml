@@ -6,7 +6,7 @@
 @model IEnumerable<Service>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "ML Peluqueria";
 }
 <!--Seccion Peluqueria-->
 <section id="pelu" class="pelu">
@@ -33,7 +33,7 @@
             <div class="col-lg-6 col-md-12 col-12 ps-lg-5 md-5">
                 <div class="about-text text-dark text-center">
                     <h2>Quienes somos </h2><br />
-                    <p class="text-dark" style="font-size:20px">
+                    <p class="rotating-text-wrapper" @* style="font-size:20px" *@ >
                         ML Peluquería nació en el año 2014 con el propósito de ayudar a mejorar la autopercepción de las personas a partir de la salud y la estética capilar.<br />
 
                         Nuestra misión es obtener la imagen deseada por nuestros clientes, fortaleciendo su autoestima y logrando autoafirmación. Nos caracterizamos por hacer la diferencia.
@@ -62,7 +62,7 @@
             @foreach (var item in Model)
             {
                 <div class="col-12 col-md-12 col-lg-4 mb-3">
-                    <div class="card border-primary pb-2 text-center">
+                    <div id="tarjeta-servicios-index" class="card border-primary pb-2 text-center">
                         <div class="card-body">
                             <div class="img-area mb-4">
                                 <img src="@item.ImageFullPath" style="width:300px; height:300px; border-radius:10px" />
@@ -71,7 +71,7 @@
                             <p class="lead">
                                 @Html.DisplayFor(modelItem => item.Descripcion)
                             </p>
-                            <a asp-controller="Servicio" asp-action="DetailService" asp-route-id="@item.Id" class="btn btn-outline-primary">Mas informacion</a>
+                            <a asp-controller="Home" asp-action="DetailService" asp-route-id="@item.Id" class="btn btn-outline-primary">Mas informacion</a>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
         </div>
         <div class="row" style="justify-content:center;">
             <div class="col-lg-8 col-md-12 p-0 pt-4 pb-4 justify-content-between text-center">
-                <form action="https://formsubmit.co/diaz.jose.manuel.04@gmail.com" method="POST" class="bg-secondary p-4 justify-content-center">
+                <form id="formulario-para-contacto" action="https://formsubmit.co/diaz.jose.manuel.04@gmail.com" method="POST" class="bg-secondary p-4 justify-content-center">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">

@@ -1,13 +1,19 @@
 * {
     font-family: "Nunito", sans-serif;
+    font-size: 20px;
 }
 #maps {
     height: 500px;
     width: 100%;
+
+}
+#mi_mapa {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 body{
-    background: #fee;
-    
+    background: #fee;    
 }
 .container {
     margin-top: 30px; /*para separar el navbar cuando tiene la propiedad fixed*/
@@ -43,9 +49,20 @@ span{
 }
 
 /*Seccion carousel*/
+#carouselE {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+}
+.carousel-inner {
+    border: 1px solid #adb6c7;
+    border-radius: 1px;
+}
 .carousel-item{
     height: 60vh;
     min-height: 300px;
+
 }
 .carousel-caption{
     bottom: 200px;
@@ -122,16 +139,31 @@ nav{
     padding: 30px 10px;
 }
 /*Seccion services y team*/
+.about-img {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+/*Seccion services y team*/
 .services .card-body i{
     font-size: 50px;
 }
 .team .card-body i{
     font-size: 20px;
 }
-/*Detalles Servicios*/
+#tarjeta-servicios-index {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+/*Detalles Reserva*/
+#tarjeta-para-reserva {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    width:550px;
+}
 .img-detalle {
-    /*width: 500px;
-    height: 500px; */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -144,11 +176,30 @@ nav{
     font-size: 15px;
     font-weight: bold;
 }
-
+/*Detalles*/
+#detalles-para-la-tarjeta {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    font-size: 20px;
+    font-weight: 400;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,56,121,0.7512254901960784) 36%, rgba(0,212,255,1) 100%);
+}
+#detalles-para-la-tarjeta h5{
+    font-weight: 800;
+    font-size: 30px;
+}
+/*Seccion contacto*/
+#formulario-para-contacto {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 
 
 /*Seccion convertir en RESPONSIVE*/
-@media(max-width : 767px){
+@media(max-width : 767px) {
     .navbar-nav{
         text-align: center;
     }
@@ -182,6 +233,19 @@ nav{
     }
     .section-padding{
         padding: 50px 0;
+    }
+    /*detalle reserva*/
+    #tarjeta-para-reserva {
+        display: flex;
+        width: auto;
+    }
+    #MyTable_length, #MyTable_length, 
+    #MyTable_filter, #MyTable_info, 
+    #MyTable_paginate {
+        display: none;
+    }
+    #ocultar{
+        display: none;
     }
 }
 

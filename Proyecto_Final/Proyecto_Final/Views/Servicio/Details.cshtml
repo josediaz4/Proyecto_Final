@@ -1,46 +1,28 @@
 ﻿@model Proyecto_Final.Data.Entidades.Service
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Ml Peluqueria";
 }
 
 <h1>Detalle</h1>
 
-<div>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Duracion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Duracion)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayName("Imagen")
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.ImageFullPath)" style="width:500px;height:500px;" />
-        </dd>
-    </dl>
+<div id="detalles-para-la-tarjeta" class="card my-5" style="max-width: 840px;">
+    <div class="row detalle" >
+        <div class="col-md-8">
+            <img src="@Html.DisplayFor(model => model.ImageFullPath)" class="img-fluid img-detalle" />
+        </div>
+        <div class="col-md-4">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(model => model.Nombre)</h5>
+                <p class="card-text">@Html.DisplayFor(model => model.Descripcion).</p>
+                <p class="card-text">Precio: @Html.DisplayFor(model => model.Precio)</p>
+                <p class="card-text">Duracion: @Html.DisplayFor(model => model.Duracion)</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> |
     <a asp-action="Index" class="btn btn-outline-success">Regresar</a>

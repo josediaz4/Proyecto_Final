@@ -34,6 +34,23 @@ namespace Proyecto_Final.Controllers
             return await _context.Servicios.ToListAsync();
         }
 
+        public async Task<IActionResult> DetailService(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var service = await _context.Servicios
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (service == null)
+            {
+                return NotFound();
+            }
+
+            return View(service);
+        }
+
         public IActionResult Privacy()
         {
             return View();

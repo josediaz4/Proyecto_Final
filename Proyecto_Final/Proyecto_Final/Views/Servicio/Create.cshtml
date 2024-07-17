@@ -1,41 +1,10 @@
-﻿@* @using Proyecto_Final.Data.Entidades
-
-@{
-    ViewData["Title"] = "Servicio";
-    Layout = null;
-}
-
-<flash dismissable="true" />
-
-<div class="smfont container">
-    <form asp-action="Create" enctype="multipart/form-data" autocomplete="off" asp-route-id="@Model.Id" onsubmit="return jQueryAjaxPost(this);">
-        <div class="box-body">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <partial name="_CreateService" />
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal"><i class="fa fa-ban"></i> Cancelar</button>
-            <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-save"></i> Guardar</button>
-        </div>
-    </form>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
- *@
-
-
-
-
+﻿
 ﻿@using Proyecto_Final.Data.Entidades
 
 @model Service
 
 @{
-    ViewData["Title"] = "CreateService";
+    ViewData["Title"] = "Ml Peluqueria";
 }
 
 <h1>Crear Servicio</h1>

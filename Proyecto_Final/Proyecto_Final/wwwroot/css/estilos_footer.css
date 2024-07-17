@@ -24,7 +24,7 @@ body {
 }
 
 .nombrePelu {
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
 }
 
@@ -42,10 +42,9 @@ span {
 }
 
 .partFooter h4 {
-    color: #5d6678;
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 0;
 }
 
 .partFooter a {
@@ -54,7 +53,6 @@ span {
     color: #5d6678;
     font-weight: 300;
     transition: color .3s ease-in-out;
-    margin-bottom: 10px;
 }
 
 .partFooter a:hover {
@@ -78,7 +76,14 @@ span {
     text-align: center;
     transition: all ease-in-out .3s;
     margin-right: 5px;
+
 }
+.map-icon svg:hover {
+    color: #fff;
+    background: #4c94cf;
+    border-color: #1fde82;
+}
+
 .map-icon a{
     text-decoration: none;
 }
@@ -87,20 +92,33 @@ span {
 
     font-size: 20px;
     color: #adb6c7;
-    border: 1px solid #adb6c7;
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    line-height: 26px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
     transition: all ease-in-out .3s;
     margin-right: 5px;
+    display: flex;  
 }
 
 .social-media svg:hover {
     color: #fff;
     background: #1fde82;
     border-color: #1fde82;
+}
+/*Seccion (responsive)*/
+@media(max-width: 991px){
+    /*Footer*/
+    .social-media{
+        display: flex;
+        justify-content: center;
+    }
+    .partFooter{
+        display:inline-block;
+        justify-content:center;
+        margin: auto;
+    }
+    
 }
