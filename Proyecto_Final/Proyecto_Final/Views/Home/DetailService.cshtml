@@ -4,7 +4,11 @@
 @model Proyecto_Final.Data.Entidades.Service
 
 <link href="~/css/estilos.css" rel="stylesheet" />
-
+<style>
+    #botones {
+        visibility: hidden;
+    }
+</style>
 @{
     ViewData["Title"] = "Ml Peluqueria";
 }
@@ -27,7 +31,7 @@
         <li class="list-group-item" style="font-size:15px;">
             <div class="items-reserva">
                 @Html.DisplayNameFor(model => model.Duracion):
-                @Html.DisplayFor(model => model.Duracion)
+                @Html.DisplayFor(model => model.Duracion) hs
             </div>
 
         </li>

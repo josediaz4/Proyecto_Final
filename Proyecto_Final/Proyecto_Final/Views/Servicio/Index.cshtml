@@ -6,6 +6,7 @@
 @{
     ViewData["Title"] = "Ml Peluqueria";
 }
+
 <br />
 <br />
 <p class="mt-5">
@@ -57,7 +58,7 @@
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></a>
                                     <a asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info fa-xl" style="color: #74C0FC;"></i></a>
-                                    <a asp-controller="Servicio" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('¿Está seguro que desea archivar este producto?');"><i class="fa-solid fa-trash fa-xl" style="color: #cb4f3a;"></i></a>
+                                    <a asp-controller="Servicio" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('¿Está seguro que desea eliminar este servicio?');"><i class="fa-solid fa-trash fa-xl" style="color: #cb4f3a;"></i></a>
                                 </td>
                             </tr>
                         }
