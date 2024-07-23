@@ -10,7 +10,7 @@
 }
 <!--Seccion Peluqueria-->
 <section id="pelu" class="pelu">
-    <div class="section-padding container">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 logo-pelu">
                 <img src="~/images/logo.png" class="img-fluid" style="width:400px; height:400px;">
@@ -34,7 +34,7 @@
                 <div class="about-text text-dark text-center">
                     <h2>Quienes somos </h2><br />
                     <p class="rotating-text-wrapper" @* style="font-size:20px" *@ >
-                        ML Peluquería nació en el año 2014 con el propósito de ayudar a mejorar la autopercepción de las personas a partir de la salud y la estética capilar.<br />
+                        ML Peluquería nació en el año 2021 con el propósito de ayudar a mejorar la autopercepción de las personas a partir de la salud y la estética capilar.<br />
 
                         Nuestra misión es obtener la imagen deseada por nuestros clientes, fortaleciendo su autoestima y logrando autoafirmación. Nos caracterizamos por hacer la diferencia.
                         La empatía de nuestros profesionales selectos permite alcanzar la mejor expresión de nuestros usuarios. Somos la peluquería más autentica y distintiva de nuestra ciudad y  brindamos un excelente servicio con un ambiente climatizado.
@@ -65,11 +65,11 @@
                     <div id="tarjeta-servicios-index" class="card border-primary pb-2 text-center">
                         <div class="card-body">
                             <div class="img-area mb-4">
-                                <img src="@item.ImageFullPath" style="width:300px; height:300px; border-radius:10px" />
+                                <img src="@item.ImageFullPath" class="img-fluid" style="width:300px; height:300px; border-radius:10px" />
                             </div>
-                            <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                            <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
                             <p class="lead">
-                                @Html.DisplayFor(modelItem => item.Descripcion)
+                                @Html.DisplayFor(modelItem => item.Description)
                             </p>
                             <a asp-controller="Home" asp-action="DetailService" asp-route-id="@item.Id" class="btn btn-outline-primary">Mas informacion</a>
                         </div>

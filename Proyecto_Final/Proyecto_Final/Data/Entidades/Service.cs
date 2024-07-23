@@ -10,27 +10,28 @@ namespace Proyecto_Final.Data.Entidades
         [Display(Name = "Nombre")]
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Nombre { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string Descripcion { get; set; }
+        public string Description { get; set; }
 
         [Column(TypeName = "decimal(18,2)")]
         [DisplayFormat(DataFormatString = "{0:C2}")]
         [Display(Name = "Precio")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public decimal Precio { get; set; }
+        public decimal Price { get; set; }
 
-        public bool Estado { get; set; }
+        public bool State { get; set; }
 
-        public float Duracion { get; set; }
+        [Display(Name = "Duración")]
+        public float Duration { get; set; }
 
         public Guid ImageId { get; set; }
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:5024/images/no-image.png"
+            ? $"https://mlpeluqueria.azurewebsites.net/images/nono-image.png"
             : $"https://proyectopelu.blob.core.windows.net/servicios/{ImageId}";
         [NotMapped]
         public IFormFile? ImageFile { get; set; }

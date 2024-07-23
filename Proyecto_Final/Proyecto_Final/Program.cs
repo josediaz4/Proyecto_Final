@@ -4,6 +4,7 @@ using Proyecto_Final.Data;
 using Proyecto_Final.Data.Entidades;
 using Proyecto_Final.Helpers;
 using Vereyon.Web;
+using Microsoft.Extensions.Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,11 @@ builder.Services.AddTransient<SeedDb>();
 builder.Services.AddFlashMessage();
 builder.Services.AddScoped<IBlobHelper, BlobHelper>();
 builder.Services.AddScoped<IUserHelper, UserHelper>();
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    clientBuilder.AddBlobServiceClient(builder.Configuration["Blob:ConnectionString:blob"]!, preferMsi: true);
+    clientBuilder.AddQueueServiceClient(builder.Configuration["Blob:ConnectionString:queue"]!, preferMsi: true);
+});
 
 var app = builder.Build();
 

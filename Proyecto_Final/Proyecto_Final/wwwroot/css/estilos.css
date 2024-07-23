@@ -12,6 +12,9 @@
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
+#pelu{
+    padding-top:15px;
+}
 body{
     background: #fee;    
 }
@@ -55,12 +58,15 @@ span{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     border-radius: 10px;
 }
+.slide{
+    display:flex;
+}
 .carousel-inner {
     border: 1px solid #adb6c7;
     border-radius: 1px;
 }
 .carousel-item{
-    height: 60vh;
+    height: 70vh;
     min-height: 300px;
 
 }
@@ -184,7 +190,7 @@ nav{
     font-size: 20px;
     font-weight: 400;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,56,121,0.7512254901960784) 36%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 #detalles-para-la-tarjeta h5{
     font-weight: 800;
@@ -200,11 +206,19 @@ nav{
 
 /*Seccion convertir en RESPONSIVE*/
 @media(max-width : 767px) {
+    .logo-pelu{
+        padding:0;
+        margin:0;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .navbar-nav{
         text-align: center;
     }
     .carousel-item{
-        height: 70vh;
+        height: 40vh;
 
     }
     .w-100{

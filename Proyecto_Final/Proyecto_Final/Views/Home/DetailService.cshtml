@@ -18,20 +18,20 @@
 <div id="tarjeta-para-reserva" class="card mt-5">
     <img src="@Html.DisplayFor(model => model.ImageFullPath)" style="" class="card-img-top img-detalle">
     <div class="card-body">
-        <h5 class="titulo-reserva" style="font-size:20px; font-weight:bold;">@Html.DisplayFor(model => model.Nombre)</h5>
-        <p>@Html.DisplayFor(model => model.Descripcion) </p>
+        <h5 class="titulo-reserva" style="font-size:20px; font-weight:bold;">@Html.DisplayFor(model => model.Name)</h5>
+        <p>@Html.DisplayFor(model => model.Description) </p>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item" style="font-size:15px;">
             <div class="items-reserva">
-                @Html.DisplayNameFor(model => model.Precio):
-                @Html.DisplayFor(model => model.Precio)
+                @Html.DisplayNameFor(model => model.Price):
+                @Html.DisplayFor(model => model.Price)
             </div>
         </li>
         <li class="list-group-item" style="font-size:15px;">
             <div class="items-reserva">
-                @Html.DisplayNameFor(model => model.Duracion):
-                @Html.DisplayFor(model => model.Duracion) hs
+                @Html.DisplayNameFor(model => model.Duration):
+                @Html.DisplayFor(model => model.Duration) hs
             </div>
 
         </li>

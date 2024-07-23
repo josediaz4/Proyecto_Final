@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Ml Peluqueria";
 }
-
+<style>
+    #botones {
+        visibility: hidden;
+    }
+</style>
 <h1>Detalle</h1>
 
 <div id="detalles-para-la-tarjeta" class="card my-5" style="max-width: 840px;">
@@ -13,10 +17,10 @@
         </div>
         <div class="col-md-4">
             <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(model => model.Nombre)</h5>
-                <p class="card-text">@Html.DisplayFor(model => model.Descripcion).</p>
-                <p class="card-text">Precio: @Html.DisplayFor(model => model.Precio)</p>
-                <p class="card-text">Duracion: @Html.DisplayFor(model => model.Duracion) hs</p>
+                <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                <p class="card-text">@Html.DisplayFor(model => model.Description).</p>
+                <p class="card-text">Precio: @Html.DisplayFor(model => model.Price)</p>
+                <p class="card-text">Duracion: @Html.DisplayFor(model => model.Duration) hs</p>
             </div>
         </div>
     </div>

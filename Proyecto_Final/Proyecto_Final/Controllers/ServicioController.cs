@@ -59,7 +59,7 @@ namespace Proyecto_Final.Controllers
                         imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "servicios");
 
                         model.ImageId = imageId;
-                        model.Estado = true;
+                        model.State = true;
                     }
                     //Guardar la información del servicio en la base de datos
                     _context.Add(model);
@@ -161,7 +161,7 @@ namespace Proyecto_Final.Controllers
                         imageId = await _blobHelper.UploadBlobAsync(service.ImageFile, "servicios");
 
                         service.ImageId = imageId;
-                        service.Estado = true;
+                        service.State = true;
                     }
                     _context.Update(service);
                     await _context.SaveChangesAsync();
@@ -260,7 +260,7 @@ namespace Proyecto_Final.Controllers
                             imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "servicios");
 
                             model.ImageId = imageId;
-                            model.Estado = true;
+                            model.State = true;
                         }
                         //Guardar la información del servicio en la base de datos
                         _context.Add(model);
