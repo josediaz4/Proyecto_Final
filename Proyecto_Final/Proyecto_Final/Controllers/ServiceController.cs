@@ -11,13 +11,13 @@ using static Shooping.Helpers.ModalHelper;
 namespace Proyecto_Final.Controllers
 {
     
-    public class ServicioController : Controller
+    public class ServiceController : Controller
     {
         private readonly DataContext _context;
         private readonly IBlobHelper _blobHelper;
         private readonly IFlashMessage _flashMessage;
 
-        public ServicioController(DataContext context, IBlobHelper blobHelper, IFlashMessage flashMessage)
+        public ServiceController(DataContext context, IBlobHelper blobHelper, IFlashMessage flashMessage)
         {
             _context = context;
             _blobHelper = blobHelper;
@@ -64,6 +64,7 @@ namespace Proyecto_Final.Controllers
                     //Guardar la información del servicio en la base de datos
                     _context.Add(model);
                     await _context.SaveChangesAsync();
+                    _flashMessage.Info("Registro creado.");
                     //Una vez guardada la información se redirige a la lista de servicios
                     return RedirectToAction(nameof(Index));
                 }
@@ -72,11 +73,11 @@ namespace Proyecto_Final.Controllers
 
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe una categoria con el mismo nombre");
+                        _flashMessage.Danger("Ya existe un servicio con el mismo nombre.");
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, dbUpdateException.InnerException.Message);
+                        _flashMessage.Danger(dbUpdateException.InnerException.Message);
                     }
                 }
                 catch (Exception exception)
@@ -165,17 +166,18 @@ namespace Proyecto_Final.Controllers
                     }
                     _context.Update(service);
                     await _context.SaveChangesAsync();
+                    //_flashMessage.Info("Registro actualizado.");
                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateException dbUpdateException)
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, "Ya existe una servicio con el mismo nombre.");
+                        _flashMessage.Danger("Ya existe un servicio con el mismo nombre.");
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, dbUpdateException.InnerException.Message);
+                        _flashMessage.Danger(dbUpdateException.InnerException.Message);
                     }
                 }
                 catch (Exception exception)
@@ -204,6 +206,7 @@ namespace Proyecto_Final.Controllers
             return View(service);
         }
 
+        //Eliminar Servicio
         [NoDirectAccess]
         public async Task<IActionResult> Delete(int? id)
         {
@@ -278,7 +281,7 @@ namespace Proyecto_Final.Controllers
                 {
                     if (dbUpdateException.InnerException.Message.Contains("duplicate"))
                     {
-                        _flashMessage.Danger("Ya existe una categoría con el mismo nombre.");
+                        _flashMessage.Danger("Ya existe un servicio con el mismo nombre.");
                     }
                     else
                     {

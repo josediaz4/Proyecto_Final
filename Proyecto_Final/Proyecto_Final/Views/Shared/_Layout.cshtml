@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>@ViewData["Title"] </title>
     <link rel="shortcut icon" href="/peluqueria.ico" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
     @* Fuentea Google Fonts *@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 </head>
-<body> 
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary fixed-top border-bottom box-shadow">
             <div class="container-fluid">
@@ -51,12 +51,25 @@
                             </li>
                             @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Servicio" asp-action="Index" onclick="miFunc()">Cargar</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar</a>
+                                    <ul class="dropdown-menu bg-primary">
+                                        <li>
+                                            <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index" onclick="miFunc()">Servicios</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link text-light" asp-area="" asp-controller="Client" asp-action="Index" onclick="miFunc()">Clientes</a>
+                                        </li>
+                                    </ul>
+                                   
                                 </li>
+                               @*  <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index" onclick="miFunc()">Cargar</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Client" asp-action="Index" onclick="miFunc()">Clientes</a>
+                                </li> *@
                             }
                         </ul>
-                    </div>                    
+                    </div>
                     <ul class="nav navbar-nav navbar-right">
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -69,15 +82,15 @@
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-controller="Account" asp-action="Login" onclick="miFunc()">Iniciar Sesión</a>
                             </li>
-                            
+
                         }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container" >
-        <main role="main" class="pb-5" >
+    <div class="container">
+        <main role="main" class="pb-5">
             <partial name="_BusyIndicatorPartial" />
 
             @RenderBody()

@@ -1,0 +1,32 @@
+﻿@model Proyecto_Final.Data.Entidades.Client
+
+@{
+    ViewData["Title"] = "Ml Peluqueria";
+}
+<style>
+    #botones {
+        visibility: hidden;
+    }
+</style>
+<h1 class="mt-3">Detalle Cliente</h1>
+
+
+<div class="col-md-8 mt-5">
+    <ul class="list-group">
+        <li class="list-group-item disabled bg-primary text-light" aria-disabled="true">Detalle de Cliente</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.FirstName):</strong> @Html.DisplayFor(model => model.FirstName)</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.LastName):</strong> @Html.DisplayFor(model => model.LastName)</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.Address):</strong> @Html.DisplayFor(model => model.Address)</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.PhoneNumber):</strong> @Html.DisplayFor(model => model.PhoneNumber)</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.Email):</strong> @Html.DisplayFor(model => model.Email)</li>
+        <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.Description):</strong> @Html.DisplayFor(model => model.Description)</li>
+    </ul>
+</div>
+
+
+<div class="mt-5">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> 
+    <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+</div>
+
+

@@ -182,7 +182,7 @@ nav{
     font-size: 15px;
     font-weight: bold;
 }
-/*Detalles*/
+/*Detalles servicios*/
 #detalles-para-la-tarjeta {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -195,6 +195,12 @@ nav{
 #detalles-para-la-tarjeta h5{
     font-weight: 800;
     font-size: 30px;
+}
+/*Detalles clientes*/
+#tarjeta_detalle_cliente {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 /*Seccion contacto*/
 #formulario-para-contacto {
