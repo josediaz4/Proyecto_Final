@@ -12,7 +12,7 @@
 
 
 <div class="col-md-8 mt-5">
-    <ul class="list-group">
+    <ul id="tarjeta_nuevo_cliente" class="list-group">
         <li class="list-group-item disabled bg-primary text-light" aria-disabled="true">Detalle de Cliente</li>
         <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.FirstName):</strong> @Html.DisplayFor(model => model.FirstName)</li>
         <li class="list-group-item"><strong>@Html.DisplayNameFor(model => model.LastName):</strong> @Html.DisplayFor(model => model.LastName)</li>
@@ -25,8 +25,8 @@
 
 
 <div class="mt-5">
-    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> 
-    <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a> 
+    <a asp-action="Index" class="btn btn-success">Regresar</a>
 </div>
 
 

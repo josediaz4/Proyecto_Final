@@ -7,16 +7,16 @@
       "destination": "wwwroot/lib/datatables/"
     },
     {
-      "library": "jqueryui@1.13.3",
-      "destination": "wwwroot/lib/jqueryui/"
-    },
-    {
       "library": "jasny-bootstrap@4.0.0",
       "destination": "wwwroot/lib/jasny-bootstrap/"
     },
     {
       "library": "font-awesome@6.5.2",
       "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "jqueryui@1.13.3",
+      "destination": "wwwroot/lib/jqueryui/"
     }
   ]
 }

@@ -15,9 +15,12 @@
 <h4> Nuevo Cliente</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div id="tarjeta_nuevo_cliente"  class="card col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="">
+
+            </div>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -51,8 +54,8 @@
 
             <div class="form-group mt-3">
                 <div class="col-12">
-                    <input type="submit" class="btn btn-outline-primary" value="Guardar" />
-                    <a asp-action="Index" class="btn btn-outline-danger"> Cancelar</a>
+                    <input type="submit" class="btn btn-primary" value="Guardar" />
+                    <a asp-action="Index" class="btn btn-danger"> Cancelar</a>
                 </div>
             </div>
         </form>

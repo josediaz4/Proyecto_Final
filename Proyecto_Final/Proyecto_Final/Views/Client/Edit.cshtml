@@ -14,7 +14,7 @@
 <h4 class="mt-5">Editar Cliente</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div id="tarjeta_nuevo_cliente" class="card col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -51,8 +51,8 @@
             </div>
             <br />
             <div class="form-group mt-5">
-                <input type="submit" value="Guardar" class="btn btn-outline-primary" />
-                <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-success">Regresar</a>
             </div>
         </form>
     </div>

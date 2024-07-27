@@ -77,13 +77,12 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
             $('#MyTable').DataTable({
                 "language": {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    "url": "//cdn.datatables.net/plug-ins/2.1.2/i18n/es-MX.js"
                 },
                 "aLengthMenu": [
                     [10, 50, 100, -1],
