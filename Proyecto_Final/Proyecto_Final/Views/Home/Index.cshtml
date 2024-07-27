@@ -102,22 +102,25 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="Nombre" placeholder="Nombre">
+                                <input id="nombre" type="text" class="form-control" name="Nombre" placeholder="Nombre" required>
+                                
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input type="email" class="form-control" name="email" placeholder="Correo">
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Correo" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <textarea class="form-control" rows="3" name="mensaje" placeholder="Mensaje"></textarea>
+                                <textarea id="mensaje" class="form-control" rows="3" name="mensaje" placeholder="Mensaje" required></textarea>
                             </div>
                         </div>
-                        <input class="btn btn-primary btn-lg btn-block mt-3" type="submit" value="Enviar">
+                        <input class="btn btn-primary btn-lg btn-block mt-3" onclick="alerta()"; type="submit" value="Enviar">
+                        
+                        @* <button type="button" class="btn btn-primary" onclick="alerta()";>Show live alert</button> *@
 
-                        <input type="hidden" name="_next" value="https://localhost:7091/" />
+                        <input type="hidden" name="_next" value="https://mlpeluqueria.azurewebsites.net/" />
                         <input type="hidden" name="_captcha" value="false" />
                     </div>
                 </form>
