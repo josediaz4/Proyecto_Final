@@ -28,8 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary fixed-top border-bottom box-shadow">
+    <header class="mb-2">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary fixed-top border-bottom box-shadow">
             <div class="container-fluid">
                 <a class="text-light" asp-controller="Home" asp-action="Index" style="text-decoration:none"><span class="text-danger">ML </span>Peluquería</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -74,7 +74,7 @@
                         }
                         else
                         {
-                            <li class="nav-item">
+                            <li id="login" class="nav-item">
                                 <a class="nav-link text-light" asp-controller="Account" asp-action="Login" onclick="miFunc()">Iniciar Sesión</a>
                             </li>
 
@@ -85,7 +85,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-5">
+        <main role="main" class="pb-2">
             <partial name="_BusyIndicatorPartial" />
 
             @RenderBody()

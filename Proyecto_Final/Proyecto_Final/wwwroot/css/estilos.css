@@ -106,11 +106,11 @@ nav{
     margin: 0;
 }
 .navbar-nav a {
+    margin: 0; /**/
+    padding: 0; /**/
     font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0; /**/
-    padding: 0; /**/
 }
 .navbar-brand{
     padding: 5px; /**/
@@ -118,13 +118,13 @@ nav{
 }
 
 .navbar-dark .nabvar-brand {
-    color: #fff;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
     margin: 0; /**/
     padding: 0; /**/
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
     color: #000;
@@ -142,7 +142,7 @@ nav{
     height: 100px;
 }
 .nav-item{
-    padding: 30px 10px;
+    padding: 20px 10px;
 }
 /*Seccion services y team*/
 .about-img {
@@ -172,7 +172,8 @@ nav{
 .img-detalle {
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    /*margin-right: auto;*/
+
 }
 .card .card-body h5 .titulo-reserva {
     font-size:20px;
@@ -189,8 +190,9 @@ nav{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     font-size: 20px;
     font-weight: 400;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    /*background: rgb(2,0,36);*/
+    /*background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);*/
+    background: #0c539bdd;
 }
 #detalles-para-la-tarjeta h5{
     font-weight: 800;
@@ -204,7 +206,9 @@ nav{
 /*Nuevo Cliente*/
 #tarjeta_nuevo_cliente {
     background: radial-gradient(at 52.93611412341351% 78.79507573293701%, hsla(174.9152542372881, 93.65079365079364%, 24.705882352941178%, 1) 0%, hsla(174.9152542372881, 93.65079365079364%, 24.705882352941178%, 0) 100%), radial-gradient(at 23.657016563680422% 36.8225549678455%, hsla(13.846153846153785, 6.735751295336792%, 62.15686274509804%, 1) 0%, hsla(13.846153846153785, 6.735751295336792%, 62.15686274509804%, 0) 100%), radial-gradient(at 98.10540967574633% 84.86688650017746%, hsla(9.268292682926827, 65.07936507936508%, 37.05882352941177%, 1) 0%, hsla(9.268292682926827, 65.07936507936508%, 37.05882352941177%, 0) 100%), radial-gradient(at 92.30573038893037% 27.23824361650302%, hsla(174.9152542372881, 93.65079365079364%, 24.705882352941178%, 1) 0%, hsla(174.9152542372881, 93.65079365079364%, 24.705882352941178%, 0) 100%), radial-gradient(at 0.20913631473491456% 13.37794095011705%, hsla(13.846153846153785, 6.735751295336792%, 62.15686274509804%, 1) 0%, hsla(13.846153846153785, 6.735751295336792%, 62.15686274509804%, 0) 100%), radial-gradient(at 9.601979689041073% 13.96956071358656%, hsla(9.268292682926827, 65.07936507936508%, 37.05882352941177%, 1) 0%, hsla(9.268292682926827, 65.07936507936508%, 37.05882352941177%, 0) 100%);
+    margin-top: 20px;
     padding: 20px;
+
     border: 1px solid #adb6c7;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
@@ -265,9 +269,7 @@ nav{
         display: flex;
         width: auto;
     }
-    #MyTable_length, #MyTable_length, 
-    #MyTable_filter, #MyTable_info, 
-    #MyTable_paginate {
+    #MyTable_length, #MyTable_length, #MyTable_info{
         display: none;
     }
     #ocultar{

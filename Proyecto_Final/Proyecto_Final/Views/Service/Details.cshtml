@@ -16,21 +16,21 @@
             <img src="@Html.DisplayFor(model => model.ImageFullPath)" class="img-fluid img-detalle" />
         </div>
         <div class="col-md-4">
-            <div class="card-body">
+            <div class="card-body text-light">
                 <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
                 <p class="card-text">@Html.DisplayFor(model => model.Description).</p>
                 <p class="card-text">Precio: @Html.DisplayFor(model => model.Price)</p>
                 <p class="card-text">Duracion: @Html.DisplayFor(model => model.Duration) hs</p>
-            </div>
-        </div>
+            </div>            
+        </div>        
     </div>
 </div>
-
-
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-warning">Editar</a> |
     <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
 </div>
+
+
 
 
     

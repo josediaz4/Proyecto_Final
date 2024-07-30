@@ -10,17 +10,16 @@
 </style>
 <h1>Editar</h1>
 
-<h4>Servicio</h4>
 <hr />
 
 <div id="detalles-para-la-tarjeta" class="card my-5" style="max-width: 840px;">
     <div class="row detalle">
         
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3 mr-2">
             <img src="@Html.DisplayFor(model => model.ImageFullPath)" class="img-fluid img-detalle" />
         </div>
         <div class="col-md-4">
-            <div class="card-body">
+            <div class="card-body text-light">
                 <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
                 <form asp-action="Edit" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -52,8 +51,7 @@
                         <label class="control-label">Foto</label>
                         <input asp-for="ImageFile" type="file" class="form-control" />
                     </div>   
-                    <br />
-                    <div class="form-group mt-5">
+                    <div class="form-group mt-2">
                         <input type="submit" value="Guardar" class="btn btn-primary" />
                         <a asp-action="Index" class="btn btn-success">Regresar</a>
                     </div>

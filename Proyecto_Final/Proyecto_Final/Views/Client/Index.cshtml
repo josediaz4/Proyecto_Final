@@ -5,6 +5,10 @@
     #botones {
         visibility: hidden;
     }
+
+    .nav-item dropdown {
+        visibility: visible;
+    }
 </style>
 @{
     ViewData["Title"] = "Ml Peluqueria";
@@ -26,13 +30,13 @@
                 <table class="table-hover table-responsive table-striped table" id="MyTable">
                     <thead>
                         <tr>
-                            <th>
+                            <th style="min-width:200px; max-width: 200px,">
                                 @Html.DisplayName("Apellido y Nombre")
                             </th>
                             <th id="ocultar">
                                 @Html.DisplayNameFor(model => model.PhoneNumber)
                             </th>
-                            <th id="ocultar">
+                            <th id="ocultar" style="min-width:200px; max-width: 200px,">
                                 @Html.DisplayNameFor(model => model.Address)
                             </th>
                             <th id="ocultar">
@@ -42,7 +46,6 @@
                                 @Html.DisplayName("Acciones")
                             </th>
 
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +61,7 @@
                                 <td id="ocultar">
                                     @Html.DisplayFor(modelItem => item.Address)
                                 </td>
-                                <td id="ocultar" style="text-overflow: ellipsis;">
+                                <td id="ocultar" style="text-overflow: ellipsis; height: 10px;">
                                     @Html.DisplayFor(modelItem => item.Description)
                                 </td>
                                 <td>
@@ -79,11 +82,12 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
     <script type="text/javascript">
         $(document).ready(function () {
             $('#MyTable').DataTable({
                 "language": {
-                    "url": "//cdn.datatables.net/plug-ins/2.1.2/i18n/es-MX.js"
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
                 },
                 "aLengthMenu": [
                     [10, 50, 100, -1],

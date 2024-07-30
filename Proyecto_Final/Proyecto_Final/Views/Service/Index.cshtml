@@ -5,11 +5,14 @@
     #botones {
         visibility: hidden;
     }
+
+    nav-item dropdown {
+        visibility: visible;
+    }
 </style>
 @{
     ViewData["Title"] = "Ml Peluqueria";
 }
-
 <br />
 <br />
 <p class="mt-5">
@@ -82,7 +85,7 @@
         $(document).ready(function () {
             $('#MyTable').DataTable({
                 "language": {
-                    "url": "//cdn.datatables.net/plug-ins/2.1.2/i18n/es-MX.js"
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"    
                 },
                 "aLengthMenu": [
                     [10, 50, 100, -1],
