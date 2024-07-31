@@ -1,24 +1,43 @@
 ﻿
 //Codigo para mensaje de envio de correo en seccion contactanos
 function alerta() {
-    let nombre = document.getElementById("nombre").value;
-    let email = document.getElementById('email').value;
-    let mensaje = document.getElementById('mensaje').value;
+    //let nombre = document.getElementById("nombre").value;
+    //let email = document.getElementById('email').value;
+    //let mensaje = document.getElementById('mensaje').value;
 
-    if (nombre !== "" && email !== "" && mensaje !== "") {
-        alert("Mensaje enviado");
-    }
-    else {
-        console.log("error");
-    }
+    //if (nombre !== "" && email !== "" && mensaje !== "") {
+    //    alert("Mensaje enviado");
+    //}
+    //else {
+    //    console.log("error");
+    //}
 
-    console.log(nombre);
-    console.log(email);
-    console.log(mensaje);
+    const btn = document.getElementById('btnEnviarForm');
 
-    //let nombre = "nuevo nombre";
-    //console.log("hola");
-    //alert(nombre);
+    document.getElementById('formulario-para-contacto')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
 
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_zbw7dxj';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Enviar Mensaje';
+                    Swal.fire({
+                        title: "¡Mensaje enviado!",
+                        icon: "success"
+                    });
+                }, (err) => {
+                    btn.value = 'Enviar Mensaje';
+                    alert(JSON.stringify(err));
+                });
+        });
 
 }
+ //Enviar email de contacto
+
+
+//Alertas personalizadas

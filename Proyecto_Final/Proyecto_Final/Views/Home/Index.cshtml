@@ -1,4 +1,5 @@
-﻿@using Proyecto_Final.Data.Entidades
+﻿@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage
+@using Proyecto_Final.Data.Entidades
 @using Proyecto_Final.Models
 
 <link rel="stylesheet" href="~/css/estilos.css" />
@@ -96,13 +97,14 @@
                 </div>
             </div>
         </div>
+        
         <div class="row" style="justify-content:center;">
             <div class="col-lg-8 col-md-12 p-0 pt-4 pb-4 justify-content-between text-center">
-                <form id="formulario-para-contacto" action="https://formsubmit.co/diaz.jose.manuel.04@gmail.com" method="POST" class="bg-secondary p-4 justify-content-center">
+                <form id="formulario-para-contacto" class="bg-secondary p-4 justify-content-center">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <input id="nombre" type="text" class="form-control" name="Nombre" placeholder="Nombre" required>
+                                <input id="Nombre" type="text" class="form-control" name="Nombre" placeholder="Nombre" required>
                                 
                             </div>
                         </div>
@@ -116,14 +118,16 @@
                                 <textarea id="mensaje" class="form-control" rows="3" name="mensaje" placeholder="Mensaje" required></textarea>
                             </div>
                         </div>
-                        <input class="btn btn-primary btn-lg btn-block mt-3" onclick="alerta()"; type="submit" value="Enviar">
-                        
-                        @* <button type="button" class="btn btn-primary" onclick="alerta()";>Show live alert</button> *@
-
-                        <input type="hidden" name="_next" value="https://mlpeluqueria.azurewebsites.net/" />
-                        <input type="hidden" name="_captcha" value="false" />
+                        <input id="btnEnviarForm" class="btn btn-primary btn-lg btn-block mt-3" onclick="alerta()"; type="submit" value="Enviar">
+   
                     </div>
-                </form>
+                </form> 
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/@@emailjs/browser@4/dist/email.min.js"></script>
+
+                <script type="text/javascript">
+                    emailjs.init('oXwR8oYAinPbrO4RQ')
+                </script>
             </div>
         </div>
     </div>
@@ -131,3 +135,4 @@
 
 <!--Seccion Geolocalizacion-->
 <partial name="_map" />
+

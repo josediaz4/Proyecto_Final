@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -23,6 +24,8 @@
           integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
             integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    @*Alertas personalizadas*@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @* Fuentea Google Fonts *@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
@@ -88,6 +91,8 @@
         <main role="main" class="pb-2">
             <partial name="_BusyIndicatorPartial" />
 
+            
+
             @RenderBody()
         </main>
     </div>
@@ -110,7 +115,7 @@
         $(window).on('beforeunload', function () {
             displayBusyIndicator();
         });
-    </script>
+    </script>    
 
 
     @await RenderSectionAsync("Scripts", required: false)
