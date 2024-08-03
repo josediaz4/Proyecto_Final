@@ -38,7 +38,7 @@ namespace Proyecto_Final.Models
         //TODO: Pending to put the correct paths
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://mlpeluqueria.azurewebsites.net/images/nono-image.png"
+            ? $"https://localhost:5054/images/nono-image.png"
             : $"https://proyectosdiaz.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Image")]

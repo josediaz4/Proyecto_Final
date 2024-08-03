@@ -120,5 +120,8 @@ span {
         justify-content:center;
         margin: auto;
     }
+    #derechos{
+        display:none;
+    }
     
 }

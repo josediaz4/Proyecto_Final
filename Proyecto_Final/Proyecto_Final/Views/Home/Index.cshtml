@@ -11,10 +11,10 @@
 }
 <!--Seccion Peluqueria-->
 <section id="pelu" class="pelu">
-    <div class="container">
+    <div class="mt-0 container">
         <div class="row justify-content-center">
             <div class="logo-pelu">
-                <img src="~/images/logo.png" class="d-block mx-auto" style="width:400px; height:400px;">
+                <img src="~/images/logo.png" class="d-block mx-auto" style="max-width:400px; max-height:400px;">
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
             @foreach (var item in Model)
             {
                 <div class="col-12 col-md-12 col-lg-4 mb-3">
-                    <div id="tarjeta-servicios-index" class="card border-primary pb-2 text-center">
+                    <div id="tarjeta-servicios-index" class="card h-100 border-primary pb-2 text-center">
                         <div class="card-body">
                             <div class="img-area mb-4">
                                 <img src="@item.ImageFullPath" class="img-fluid" style="width:300px; height:300px; border-radius:10px" />

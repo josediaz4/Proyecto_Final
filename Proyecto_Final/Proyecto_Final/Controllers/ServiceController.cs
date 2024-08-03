@@ -56,7 +56,7 @@ namespace Proyecto_Final.Controllers
                     if (model.ImageFile != null)
                     {
                         //Guardamos la imagen en el contendedor de Blob Storage
-                        imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "servicios");
+                        imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "service");
 
                         model.ImageId = imageId;
                         model.State = true;
@@ -159,7 +159,7 @@ namespace Proyecto_Final.Controllers
                     if (service.ImageFile != null)
                     {
                         //Guardamos la imagen en el contendedor de Blob Storage
-                        imageId = await _blobHelper.UploadBlobAsync(service.ImageFile, "servicios");
+                        imageId = await _blobHelper.UploadBlobAsync(service.ImageFile, "service");
 
                         service.ImageId = imageId;
                         service.State = true;
@@ -260,7 +260,7 @@ namespace Proyecto_Final.Controllers
                         if (model.ImageFile != null)
                         {
                             //Guardamos la imagen en el contendedor de Blob Storage
-                            imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "servicios");
+                            imageId = await _blobHelper.UploadBlobAsync(model.ImageFile, "service");
 
                             model.ImageId = imageId;
                             model.State = true;

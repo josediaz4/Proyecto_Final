@@ -34,33 +34,33 @@
     <header class="mb-2">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-primary fixed-top border-bottom box-shadow">
             <div class="container-fluid">
-                <a class="text-light" asp-controller="Home" asp-action="Index" style="text-decoration:none"><span class="text-danger">ML </span>Peluquería</a>
+                <a class="text-light" asp-controller="Home" asp-action="Index" style="text-decoration:none;"><span class="text-danger">ML </span>Peluquería</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse d-sm-inline-flex justify-content-between collapse">
-                    <div id="botones">
+                    <div id="botones" class="buttons">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#about">Quienes somos</a>
+                                <a class="raise nav-link text-light" href="#about">Quienes somos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#portfolio">Servicios</a>
+                                <a class="raise nav-link text-light" href="#portfolio">Servicios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#contact">Contacto</a>
+                                <a class="raise nav-link text-light" href="#contact">Contacto</a>
                             </li>
                             @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                             {
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar</a>
+                                    <a class="raise nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar</a>
                                     <ul class="dropdown-menu bg-primary">
-                                        <li>
-                                            <a class="nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index" onclick="miFunc()">Servicios</a>
+                                        <li class="py-2">
+                                            <a class="raise nav-link text-light" asp-area="" asp-controller="Service" asp-action="Index" onclick="miFunc()">Servicios</a>
                                         </li>
-                                        <li>
-                                            <a class="nav-link text-light" asp-area="" asp-controller="Client" asp-action="Index" onclick="miFunc()">Clientes</a>
+                                        <li class="py-2">
+                                            <a class="raise nav-link text-light" asp-area="" asp-controller="Client" asp-action="Index" onclick="miFunc()">Clientes</a>
                                         </li>
                                     </ul>
                                    
@@ -72,13 +72,13 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Logout">Cerrar Sesión</a>
+                                <a class="raise nav-link text-light" asp-area="" asp-controller="Account" asp-action="Logout">Cerrar Sesión</a>
                             </li>
                         }
                         else
                         {
                             <li id="login" class="nav-item">
-                                <a class="nav-link text-light" asp-controller="Account" asp-action="Login" onclick="miFunc()">Iniciar Sesión</a>
+                                <a class="raise nav-link text-light" asp-controller="Account" asp-action="Login" onclick="miFunc()">Iniciar Sesión</a>
                             </li>
 
                         }

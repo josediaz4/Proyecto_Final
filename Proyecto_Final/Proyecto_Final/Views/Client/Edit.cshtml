@@ -15,7 +15,7 @@
 <hr />
 <div class="row mt-1">
     <div id="tarjeta_nuevo_cliente" class="card col-md-6">
-        <form asp-action="Edit">
+        <form asp-action="Edit" id="formEdit" onsubmit="editarFormulario(event, 'formEdit')">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 

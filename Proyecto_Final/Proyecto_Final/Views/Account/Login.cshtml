@@ -19,8 +19,8 @@
 
 }
 
-<section class="mx-5 py-5 gradient-custom">
-    <div class="py-2 container">
+<section class="mx-5 gradient-custom">
+    <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-6">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
@@ -51,12 +51,17 @@
                                 </div>
                                 <div class="form-group mt-2">
                                     <input type="submit" value="Iniciar Sesión" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" />
-                                </div>
-                                <div class="form-group mt-2">
-                                    <a href="https://wa.me/3815556397/?text=Password:%20%20123456%20">Recuperar Contraseña</a>
-                                </div>
+                                </div>                               
                             </form>
+                            <form id="form-login" class="form-group mt-2">
+                                <input id="enviar" type="submit" onclick="PasswordMail()" ; value="Recuperar Contraseña"/>
+                            </form>
+                            <script type="text/javascript"
+                                    src="https://cdn.jsdelivr.net/npm/@@emailjs/browser@4/dist/email.min.js"></script>
 
+                            <script type="text/javascript">
+                                emailjs.init('oXwR8oYAinPbrO4RQ')
+                            </script>
                         </div>
 
                     </div>
