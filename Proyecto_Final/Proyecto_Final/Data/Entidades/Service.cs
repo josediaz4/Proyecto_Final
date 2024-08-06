@@ -32,7 +32,7 @@ namespace Proyecto_Final.Data.Entidades
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://localhost:5024/images/nono-image.png"
+            ? $"https://mlpeluquerias.azurewebsites.net/images/nono-image.png"
             : $"https://peluqueria.blob.core.windows.net/service/{ImageId}";
         [NotMapped]
         public IFormFile? ImageFile { get; set; }

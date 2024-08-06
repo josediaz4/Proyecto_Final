@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/MLPeluquerias/providers/Microsoft.ServiceLinker/linkers/BlobConnectionString_2FFF8CA097, /subscriptions/9f8e0957-b021-4caf-b89e-6deae2bdf49c/resourcegroups/Manu/providers/Microsoft.Web/sites/MLPeluquerias/providers/Microsoft.ServiceLinker/linkers/BlobConnectionString_652A55FA5C",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/peluqueria",
+      "type": "storage.azure",
+      "connectionId": "Blob:ConnectionString",
+      "dynamicId": null
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/MLPeluquerias/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsDefaultConnection_3E13214972",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/proyecto-final-mlpeludbserver/databases/Proyecto_Final_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "dynamicId": null
+    }
+  }
+}
