@@ -86,20 +86,37 @@ function PasswordMail() {
 
 //Alertas personalizadas confirmar
 function enviarFormulario(e, form) {
-    e.preventDefault();
+    const formulario = document.getElementById(form);
 
-    Swal.fire({
-        title: "¡Éxito!",
-        text: "Registro cargado correctamente!",
-        icon: "success",
-        showCancelButton: false,
-        confirmButtonText: "Aceptar"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            const formulario = document.getElementById(form);
-            formulario.submit();
-        }
-    })    
+    let nombre = document.getElementById('Name').value;
+    let descripcion = document.getElementById('Description').value;
+    let precio = document.getElementById('Price').value;
+    let duracion = document.getElementById('Duration').value;
+
+    if (nombre == '' || descripcion == '' || precio == '' || duracion == '') {
+
+        console.log(nombre)
+        console.log(descripcion)
+        console.log(precio)
+        console.log(duracion)
+    }
+    else {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "¡Éxito!",
+            text: "Registro cargado correctamente!",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonText: "Aceptar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                /const formulario = document.getElementById(form);/
+                formulario.submit();
+            }
+        })
+
+    }
 }
 //Alertas personalizadas editar
 function editarFormulario(e, form) {
